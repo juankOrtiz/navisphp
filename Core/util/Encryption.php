@@ -10,7 +10,6 @@ namespace Core\Util;
  */
 class Encryption
 {
-
     /**
      * @link http://php.net/manual/en/function.openssl-get-cipher-methods.php Available methods.
      * @var string Cipher method. Recommended AES-128-CBC, AES-192-CBC, AES-256-CBC
@@ -33,7 +32,7 @@ class Encryption
             $salt = hex2bin($json["salt"]);
             $iv = hex2bin($json["iv"]);
         } catch (\Exception $e) {
-            return null;
+            return;
         }
 
         $cipherText = base64_decode($json['ciphertext']);

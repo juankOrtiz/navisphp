@@ -16,7 +16,7 @@ $signedIn = (new Authenticator)->atempt(
     $attributes['password']
 );
 
-if(! $signedIn) {
+if(!$signedIn) {
     $form->error('email', "There's not account with those credentials")
         ->throw();
 }

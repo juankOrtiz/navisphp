@@ -19,4 +19,3 @@ $db->query("delete from notes where id = :id", [
 
 header('location: /notes');
 exit();
-

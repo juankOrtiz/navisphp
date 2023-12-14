@@ -8,11 +8,11 @@ $db = App::resolve(Database::class);
 
 $errors = [];
 
-if(! Validator::string($_POST['body'], 1, 1000)) {
+if(!Validator::string($_POST['body'], 1, 1000)) {
     $errors['body'] = 'You must enter a body between 1 and 1000 characters';
 }
 
-if(! empty($errors)) {
+if(!empty($errors)) {
     return view("notes/create.view.php", [
         'heading' => 'Create note',
         'errors' => $errors

@@ -8,11 +8,11 @@ $email = $_POST['email'];
 $password = $_POST['password'];
 
 $errors = [];
-if(! Validator::email($email)) {
+if(!Validator::email($email)) {
     $errors['email'] = 'Please enter a valid email address';
 }
 
-if(! Validator::string($password, 7, 255)) {
+if(!Validator::string($password, 7, 255)) {
     $errors['password'] = 'Please enter a password between 7 and 255 characters';
 }
 

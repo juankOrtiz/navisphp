@@ -4,7 +4,7 @@ namespace Core;
 
 class Response
 {
-  const NOT_FOUND = 404;
-  const FORBIDDEN = 403;
-  const MAINTENANCE = 503;
+    public const NOT_FOUND = 404;
+    public const FORBIDDEN = 403;
+    public const MAINTENANCE = 503;
 }
