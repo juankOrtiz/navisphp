@@ -1,24 +1,28 @@
 {
-    "name": "juankortiz/navisphp",
-    "authors": [
-        {
-            "name": "juankOrtiz",
-            "email": "juank.ortiz.1991@gmail.com"
-        }
-    ],
-    "require": {
-        "illuminate/collections": "^10.9",
-        "pestphp/pest": "^2.5"
-    },
-    "autoload": {
-        "psr-4": {
-            "Core\\": "Core/",
-            "Http\\": "Http/"
-        }
-    },
-    "config": {
-        "allow-plugins": {
-            "pestphp/pest-plugin": true
-        }
+  "name": "juankortiz/navisphp",
+  "authors": [
+    {
+      "name": "juankOrtiz",
+      "email": "juank.ortiz.1991@gmail.com"
     }
+  ],
+  "require": {
+    "illuminate/collections": "^10.9",
+    "pestphp/pest": "^2.5",
+    "monolog/monolog": "3.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "Core\\": "Core/",
+      "Http\\": "Http/"
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
+  },
+  "require-dev": {
+    "laravel/pint": "^1.13"
+  }
 }
