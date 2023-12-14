@@ -3,6 +3,7 @@
 return [
     'app' => [
         'url' => '',
+        'timezone' => 'America/Argentina/Buenos_Aires',
     ],
     'database' => [
         'username' => '',
