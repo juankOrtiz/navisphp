@@ -11,45 +11,45 @@ function dd($value): void
     die();
 }
 
-function urlIs($value): bool
+function urlIs(string $value): bool
 {
     return $_SERVER['REQUEST_URI'] === $value;
 }
 
-function authorize($condition, $status = Response::FORBIDDEN): void
+function authorize($condition, int $status = Response::FORBIDDEN): void
 {
   if(! $condition) {
     abort($status);
   }
 }
 
-function base_path($path) {
+function base_path(string $path): string {
   return BASE_PATH . $path;
 }
 
-function view($path, $attributes = []) {
+function view(string $path, array $attributes = []): void {
   extract($attributes, EXTR_OVERWRITE);
 
   require base_path('views/' . $path);
 }
 
-function user()
+function user(): array|false
 {
   return $_SESSION['user'] ?? false;
 }
 
-function abort($code = 404): void
+function abort(int $code = 404): void
 {
   http_response_code($code);
   require base_path("views/{$code}.php");
   die();
 }
 
-function redirect($path) {
+function redirect(string $path): void {
     header("location: {$path}");
     exit();
 }
 
-function old($key, $default = '') {
+function old(string $key, string $default = ''): string {
     return \Core\Session::get('old')[$key] ?? $default;
 }
