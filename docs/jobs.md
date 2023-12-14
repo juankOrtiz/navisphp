@@ -2,9 +2,6 @@
 
 -   [Introduccion](#introduccion)
 -   [Estructura de un job](#estructura-de-un-job)
--   [Tipos de niveles](#tipos-de-niveles)
--   [Ejemplo de uso](#ejemplo-de-uso)
--   [Referencia de Monolog](#referencia-de-monolog)
 
 ## Introduccion
 
