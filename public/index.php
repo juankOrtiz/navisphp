@@ -5,7 +5,7 @@ use Core\Session;
 use Core\Settings;
 use Core\ValidationException;
 
-const BASE_PATH = __DIR__.'/../';
+const BASE_PATH = __DIR__ . '/../';
 
 require BASE_PATH . 'vendor/autoload.php';
 
@@ -21,7 +21,7 @@ $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 
 $method = $_POST['_method'] ?? $_SERVER['REQUEST_METHOD'];
 
-$maintenance = new Settings('mantenimiento');
+$maintenance = new Settings('maintenance');
 
 if ($maintenance->get('status') === 1) {
     $rutas_permitidas = $maintenance->get('allowed_routes');
