@@ -35,10 +35,10 @@ class Logger
     {
         $levels = ['debug', 'info', 'notice', 'warning', 'error', 'critical', 'alert', 'emergency'];
 
-        if (in_array($level, $levels)) {
-            $this->log->{$level}($message, $context);
-        } else {
+        if (!in_array($level, $levels)) {
             throw new \InvalidArgumentException("Argument {$level} not supported.");
         }
+
+        $this->log->{$level}($message, $context);
     }
 }

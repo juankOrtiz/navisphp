@@ -26,10 +26,10 @@ class Router
         $httpMethods = ['get', 'post', 'delete', 'patch', 'put'];
 
         if (in_array($name, $httpMethods)) {
-            return $this->add(strtoupper($name), ...$args);
-        } else {
             throw new \BadMethodCallException("Method {$name} not supported.");
         }
+
+        return $this->add(strtoupper($name), ...$args);
     }
 
     public function only(string $key): self
