@@ -49,6 +49,16 @@ function user(): array|false
   return $_SESSION['user'] ?? false;
 }
 
+function user_type(): int
+{
+    return (int)($_SESSION['user']['type']);
+}
+
+function isSuperAdmin(): bool
+{
+    return user_type() === 1;
+}
+
 function abort(int $code = 404): void
 {
   http_response_code($code);
