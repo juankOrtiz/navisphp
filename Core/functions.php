@@ -11,9 +11,20 @@ function dd($value): void
     die();
 }
 
+function report(): void
+{
+    error_reporting(E_ALL);
+    ini_set('display_errors', True);
+}
+
 function urlIs(string $value): bool
 {
     return $_SERVER['REQUEST_URI'] === $value;
+}
+
+function urlStartsWith(string $fragment): bool
+{
+    return str_starts_with($_SERVER['REQUEST_URI'], $fragment);
 }
 
 function authorize($condition, int $status = Response::FORBIDDEN): void
@@ -52,4 +63,25 @@ function redirect(string $path): void {
 
 function old(string $key, string $default = ''): string {
     return \Core\Session::get('old')[$key] ?? $default;
+}
+
+function resourceRoute(string $path): string
+{
+    $slashes = substr_count($_SERVER['REQUEST_URI'], '/');
+    return str_repeat('../', $slashes);
+}
+
+function css(string $path): string
+{
+    return resourceRoute($path) . 'css' . $path;
+}
+
+function js(string $path): string
+{
+    return resourceRoute($path) . 'js' . $path;
+}
+
+function img(string $path): string
+{
+    return resourceRoute($path) . 'img' . $path;
 }
