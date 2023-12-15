@@ -56,7 +56,7 @@ $params = json_decode(file_get_contents('php://input'), true);
 $id = $params['id'];
 ```
 
-2. Validar los datos de una consulta mediante una clase del tipo Form
+2. Validar los datos de una consulta mediante una [clase del tipo Form](validaciones.md)
 
 ```php
 // La clase LoginForm define cuales son las reglas para que un email y una contraseña sean válidas
