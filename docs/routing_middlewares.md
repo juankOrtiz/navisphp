@@ -36,7 +36,7 @@ Con estos dos datos, el siguiente paso es intentar "mapear" la URI con una acci�
 
 ## Archivo routes
 
-En la raíz del proyecto nos encontramos con `routes.php`, archivo que define la lista de URL's permitidas para nuestra aplicación. Para cada URL también se define cual es el controlador que se ejecutará al solicitar dicha dirección.
+En la raíz del proyecto nos encontramos con `routes.php`, archivo que define la lista de URL's permitidas para nuestra aplicación. Para cada URL también se define cual es el [controlador](controladores.md) que se ejecutará al solicitar dicha dirección.
 
 ```php
 $router->get('/', 'index.php');

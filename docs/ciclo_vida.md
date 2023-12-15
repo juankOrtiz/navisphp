@@ -97,7 +97,7 @@ if ($maintenance->get('status') === 1) {
 }
 ```
 
-7. Luego se intenta dirigir al usuario a la próxima ruta, a menos que exista un error de validación en cuyo caso se redirige a la ruta anterior con los datos ingresados previamente (útil para volver a poblar un formulario) y los mesajes de error
+7. Luego se intenta dirigir al usuario a la próxima ruta, a menos que exista un error de validación en cuyo caso se redirige a la ruta anterior con los datos ingresados previamente (útil para volver a poblar un formulario) y los mesajes de error.
 
 ```php
 try {
@@ -111,6 +111,8 @@ try {
     return redirect($router->urlAnterior());
 }
 ```
+
+Si no surgió ningún error, a partir de ahora es el [controlador](controladores.md) de la respectiva ruta el que toma el control y realiza sus propias acciones.
 
 8. Por último, se eliminan los datos que han sido agregados a la sesión mediante el método _flash()_. De esta forma, esos datos existirán solamente para el pedido actual.
 
