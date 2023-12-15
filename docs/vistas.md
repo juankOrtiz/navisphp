@@ -64,7 +64,15 @@ Además de estas consideraciones, no existe mucha diferencia entre este tipo de 
 
 ## Ejemplo de vista completa
 
-Veamos a continuación un ejemplo sencillo de una página que muestra un listado de usuarios.
+Veamos a continuación un ejemplo sencillo de una página que muestra un listado de usuarios. Primero, definimos en el controlador el método que envía los datos a la vista:
+
+```php
+view('users/index.view.php', [
+  'users' => $users
+]);
+```
+
+Luego, veamos el contenido de la propia vista:
 
 ```php
 // views/users/index.view.php
