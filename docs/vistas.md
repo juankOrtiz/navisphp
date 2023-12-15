@@ -5,6 +5,7 @@
 -   [Vistas parciales](#vistas-parciales)
 -   [Páginas](#páginas)
 -   [Ejemplo de vista completa](#ejemplo-de-vista-completa)
+-   [Funciones utilitarias](#funciones-utilitarias)
 
 ## Introduccion
 
@@ -141,4 +142,41 @@ Luego, veamos el contenido de la propia vista:
         }
     }
 </script>
+```
+
+## Funciones utilitarias
+
+En el archivo `Core\functions` contamos con tres funciones utilitarias para las vistas que sirven para cargar recursos externos.
+
+```php
+// Función principal que devuelve la ruta relativa de la carpeta public
+function resourceRoute(string $path): string
+{
+    $slashes = substr_count($_SERVER['REQUEST_URI'], '/');
+    return str_repeat('../', $slashes);
+}
+
+// Cargar archivo CSS ubicado en public/css
+function css(string $path): string
+{
+    return resourceRoute($path) . 'css' . $path;
+}
+
+// Cargar archivo JS ubicado en public/js
+function js(string $path): string
+{
+    return resourceRoute($path) . 'js' . $path;
+}
+
+// Cargar imagen ubicada en public/img
+function img(string $path): string
+{
+    return resourceRoute($path) . 'img' . $path;
+}
+```
+
+Por ejemplo, para cargar el archivo public/css/app.css en una vista podríamos utilizar el siguiente código:
+
+```html
+<link rel="stylesheet" href="<?= css('/app.css') ?>" />
 ```
