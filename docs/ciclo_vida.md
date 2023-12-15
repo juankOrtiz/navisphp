@@ -214,6 +214,8 @@ Si bien es posible agregar múltiples clases al contenedor de la aplicación, sa
 
 2. Si la instanciación de la clase requiere la configuración de varios argumentos o credenciales, haciendo que ese proceso ensucie el código cada vez que se crea un objeto.
 
+3. Si la implementación de la clase no requiere de otra clase o de la ejecución de un método previo de configuración que compliquen la resolución del contenedor.
+
 ### ¿Dónde debemos agregar clases al contenedor?
 
 El archivo `bootstrap.php` es el encargado de crear el contenedor y agregar las clases necesarias. Si deseamos agregar una nueva clase, basta con utilizar una llamada al método _bind()_ sobre el contenedor.
