@@ -3,6 +3,13 @@
 -   [Introduccion](#introduccion)
 -   [Credenciales](#credenciales)
 -   [Clase Database](#clase-database)
+-   [Uso de Database](#uso-de-database)
+-   [El método query](#el-método-query)
+-   [Lectura de datos](#lectura-de-datos)
+-   [Inserción de datos](#inserción-de-datos)
+-   [Actualización de datos](#actualización-de-datos)
+-   [Eliminación de datos](#eliminación-de-datos)
+-   [La carpeta database](#la-carpeta-database)
 
 ## Introduccion
 
@@ -67,7 +74,7 @@ Llamar a este método hará que la consulta se ejecute inmediatamente, pero tamb
 
 ## Lectura de datos
 
-Si deseamos ejecutar una consulta `SELECT` que devuelva más de un registro podemos encadenar el método _get()_
+Si deseamos ejecutar una consulta `SELECT` que devuelva más de un registro podemos encadenar el método _get()_, el cual devuelve un arreglo multidimensional.
 
 ```php
 $users = $db->query(
@@ -76,7 +83,7 @@ $users = $db->query(
 )->get();
 ```
 
-En cambio, si el objetivo de la consulta es obtener un solo registro, el método a usar es _find()_
+En cambio, si el objetivo de la consulta es obtener un solo registro, el método a usar es _find()_, el cual devuelve un arreglo unidimensional.
 
 ```php
 $userId = 1;
@@ -133,4 +140,36 @@ $rows = $db->query(
 
 ## Actualización de datos
 
-Para ejecutar una consulta `UPDATE` seguimos las mismas reglas vistas para los `INSERT`
+Para ejecutar una consulta `UPDATE` seguimos las mismas reglas vistas para los `INSERT`.
+
+```php
+$db->query(
+    "UPDATE users
+    SET name = :name
+    WHERE idusers = :id",
+    [
+        'name' => $name,
+        'id' => $iduser,
+    ]
+);
+```
+
+## Eliminación de datos
+
+Para ejecutar una consulta `DELETE` seguimos las mismas reglas vistas para los `INSERT`.
+
+```php
+$db->query(
+    "DELETE FROM users
+    WHERE idusers = :id",
+    [
+        'id' => $iduser,
+    ]
+);
+```
+
+## La carpeta database
+
+Si bien no es una parte fundamental de la clase de consultas, la carpeta `database` viene por defecto con un archivo `script.sql` que contiene la estructura base de una base de datos usada por el framework: la creación de la base de datos y de una sencilla tabla de usuarios que puede utilizarse como punto de partida.
+
+A partir de allí, puedes optar por ampliar este script con las demás tablas de tu base de datos o guardar otros tipos de scripts que sean útiles.
