@@ -66,7 +66,7 @@ App::setContainer($container);
 
 Aquí tenemos dos clases adicionales: `Core/App` y `Container/Container`, los cuales son explicados en sus propias secciones.
 
-5. Las siguientes líneas de `public/index.php` crean la instancia del router, encargado de mapear cada URL con una acción específica de respuesta.
+5. Las siguientes líneas de `public/index.php` crean la instancia del [router](routing_middlewares.md), encargado de mapear cada URL con una acción específica de respuesta.
 
 ```php
 // Se crea el router
