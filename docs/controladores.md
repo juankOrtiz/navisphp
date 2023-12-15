@@ -89,7 +89,7 @@ $user = $db->query(
 authorize($note['user_id'] === $userId);
 ```
 
-5. Devolver una vista al usuario
+5. Devolver una [vista](vistas.md) al usuario
 
 ```php
 view("users/create.view.php", [
