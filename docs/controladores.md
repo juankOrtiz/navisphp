@@ -66,7 +66,7 @@ $form = LoginForm::validate($attributes = [
 ]);
 ```
 
-3. Hacer consultas a una base de datos, utilizando la clase Database y cada uno de sus métodos.
+3. Hacer consultas a una base de datos, utilizando la clase [Database](database.md) y cada uno de sus métodos.
 
 ```php
 $db = App::resolve(Database::class);
