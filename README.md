@@ -73,9 +73,12 @@ El proyecto utiliza una estructura de carpetas para agrupar su contenido, entre 
 -   **Core**: base de la aplicación.
     -   **Middleware**: middlewares que utiliza la aplicación.
     -   **Util**: clases de utilidad, se puede extender con las clases utilitarias necesarias.
+-   **database**: scripts de bases de datos.
+-   **docs**: documentación del proyecto en formato Markdown.
 -   **Http**: archivos que interactúan con los pedidos Http.
     -   **controllers**: carpeta de los controladores de la aplicación, que se agrupan por funcionalidad.
     -   **Forms**: archivos encargados de la validación de cada formulario presente en la aplicación.
+-   **jobs**: archivos de tareas programadas, que pueden ser usadas con Cron en un servidor.
 -   **node_modules**: carpeta con las dependencias del frontend, instaladas por NPM.
 -   **public**: carpeta pública que se levanta con el servidor, incluyendo el archivo _index.php_ que sirve como punto de entrada.
     -   **css**: archivos CSS utilizados por las vistas.
