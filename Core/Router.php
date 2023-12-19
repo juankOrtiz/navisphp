@@ -25,7 +25,7 @@ class Router
     {
         $httpMethods = ['get', 'post', 'delete', 'patch', 'put'];
 
-        if (in_array($name, $httpMethods)) {
+        if (!in_array($name, $httpMethods)) {
             throw new \BadMethodCallException("Method {$name} not supported.");
         }
 
