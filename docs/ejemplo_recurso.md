@@ -7,6 +7,8 @@
 -   [Controladores y vistas](#controladores-y-vistas)
 -   [Listado](#listado)
 -   [Nueva tarea](#nueva-tarea)
+-   [Validación de datos](#validación-de-datos)
+-   [Creación de la tarea](#creación-de-la-tarea)
 -   [Edición de la tarea](#edición-de-la-tarea)
 -   [Actualizar la tarea](#actualizar-la-tarea)
 -   [Eliminar la tarea](#eliminar-la-tarea)
@@ -140,7 +142,7 @@ view("tasks/create.view.php", [
 ]);
 ```
 
-La vista `create.view.php` mostrará un formulario con los campos necesarios para crear una nueva nota, así como también ofrecerá la posibilidad de mostrar los errores introducidos en cada campo (ver siguiente acción).
+La vista `create.view.php` mostrará un formulario con los campos necesarios para crear una nueva tarea, así como también ofrecerá la posibilidad de mostrar los errores introducidos en cada campo (ver siguiente acción).
 
 ```html
 <main>
@@ -164,30 +166,46 @@ La vista `create.view.php` mostrará un formulario con los campos necesarios par
 </main>
 ```
 
-### Creación de tarea
+### Validación de datos
 
-En el controlador `store.php`, al cual accedemos a tomaremos los datos del formulario y los validaremos. Según el resultado de la validación tomaremos dos caminos: si hay algún error, redirigimos a la vista de creación con los errores encontrados; sino, creamos la tarea en la tabla y redirigimos al listado de notas.
+Para validar los datos ingresados en el formulario de creación de la tarea, creamos un el archivo `Http/Forms/tasks/CreateForm.php` y agregamos las reglas de validación, que en este caso consiste solamente en el nombre de la tarea.
 
 ```php
 <?php
 
+namespace Http\Forms;
+
 use Core\Validator;
+
+class CreateForm extends Form
+{
+    public function __construct(public array $attributes)
+    {
+        if(! Validator::string($attributes['name'], 1, 150)) {
+            $errors['name'] = 'Debes ingresar una tarea entre 1 y 150 caracteres de longitud';
+        }
+    }
+}
+```
+
+### Creación de la tarea
+
+En el controlador `store.php`, al cual accedemos a tomaremos los datos del formulario y los validaremos. Según el resultado de la validación tomaremos dos caminos: si hay algún error, redirigimos a la vista de creación con los errores encontrados; sino, creamos la tarea en la tabla y redirigimos al listado de tareas.
+
+```php
+<?php
+
 use Core\App;
 use Core\Database;
+use Http\Forms\tasks\CreateForm;
 
 $db = App::resolve(Database::class);
 
 $errors = [];
 
-if(! Validator::cadena($_POST['name'], 1, 150)) {
-    $errors['name'] = 'Debes ingresar una tarea entre 1 y 150 caracteres de longitud';
-}
-
-if(! empty($errors)) {
-    return view("tasks/create.view.php", [
-        'errors' => $errors
-    ]);
-}
+$form = CreateForm::validate($datos = [
+    'name' => $_POST['name'],
+]);
 
 $db->query(
 	"INSERT INTO tasks(name, created_at, status, user_id)
@@ -280,7 +298,7 @@ Como resultado de la ejecución del controlador, se devolverá la vista `edit.vi
         <input type="hidden" name="_method" value="PATCH" />
         <input type="hidden" name="id" value="<?= $task['id'] ?>" />
 
-        <label for="name">Nota</label>
+        <label for="name">Tarea</label>
         <div>
             <textarea id="name" name="name" rows="3">
                 <?= $task['name'] ?>
@@ -314,9 +332,9 @@ Al presionar el botón **Actualizar** en el formulario anterior se llegará al c
 ```php
 <?php
 
-use Core\Validator;
 use Core\App;
 use Core\Database;
+use Http\Forms\tasks\CreateForm;
 
 $db = App::resolve(Database::class);
 
@@ -332,16 +350,9 @@ authorize($task['user_id'] === user()['id']);
 
 $errors = [];
 
-if(! Validator::cadena($_POST['name'], 1, 150)) {
-    $errors['name'] = 'Debes ingresar una tarea entre 1 y 150 caracteres de longitud';
-}
-
-if(count($errors)) {
-    return view("tasks/edit.view.php", [
-        'errors' => $errors,
-        'task' => $task
-    ]);
-}
+$form = CreateForm::validate($datos = [
+    'name' => $_POST['name'],
+]);
 
 $db->query(
     "UPDATE tasks
