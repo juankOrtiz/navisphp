@@ -2,11 +2,11 @@
 
 > Framework minimalista y moderno de PHP
 
-## Motivación
+## Motivación 💬
 
 NavisPHP surge bajo la necesidad de encontrar una estructura de proyecto estable y minimalista para mis proyectos personales. Utiliza como base el código de la serie [PHP for Beginners](https://www.youtube.com/watch?v=dVttuOjew3E) de la plataforma Laracasts, con algunas modificaciones agregadas para satisfacer las demandas propias de mis proyectos.
 
-## Características
+## Características 📌
 
 -   Moderno: el framework utiliza features actuales como containers, enrutamiento, middlewares, autocarga de clases, entre otros. A su vez, el código utiliza características actuales de PHP como atributos de solo lectura, tipado de argumentos y de retorno de funciones y anotaciones.
 -   Minimalista: incluye solo lo básico para ejecutar tu aplicación.
@@ -61,6 +61,10 @@ php -S localhost:8888 -t public
 npm run dev
 ```
 
+## Documentación 📄
+
+Puedes consultar la documentación del proyecto en [este enlace](docs/introduccion.md).
+
 ## Estructura del proyecto 📁
 
 El proyecto utiliza una estructura de carpetas para agrupar su contenido, entre las cuales se encuentran:
@@ -94,6 +98,10 @@ A continuación se listan algunas de las tecnologías y dependencias más import
 | [PestPHP](https://pestphp.com/)               | Suite de testing de PHP       | PHPUnit                                              |
 | [TailwindCSS](https://tailwindcss.com/)       | Librería de utilidades de CSS | Se puede remplazar por vanilla CSS u otras librerías |
 | [Monolog](https://github.com/Seldaek/monolog) | Librería de logging           | Analog o cualquier librería de logging               |
+
+## Licencia 📜
+
+NavisPHP se rige bajo la [licencia MIT](LICENSE).
 
 ## Autores 👥
 
