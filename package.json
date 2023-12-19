@@ -1,0 +1,11 @@
+{
+    "scripts": {
+        "dev": "npx tailwindcss -i ./src/css/app.css -o ./public/css/app.css --watch"
+    },
+    "devDependencies": {
+        "tailwindcss": "^3.2.7"
+    },
+    "dependencies": {
+        "@tailwindcss/forms": "^0.5.6"
+    }
+}
