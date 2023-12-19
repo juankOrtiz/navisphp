@@ -1,5 +1,9 @@
 # Controladores
 
+<< Anterior: [Routing y middlewares](routing_middlewares.md)
+
+\>> Siguiente: [Bases de datos](database.md)
+
 -   [Introduccion](#introduccion)
 -   [Crear un controlador](#crear-un-controlador)
 -   [Controladores de recursos](#controladores-de-recursos)
@@ -97,3 +101,9 @@ view("users/create.view.php", [
   'errors' => []
 ]);
 ```
+
+[Volver al inicio](#controladores)
+
+<< Anterior: [Routing y middlewares](routing_middlewares.md)
+
+\>> Siguiente: [Bases de datos](database.md)

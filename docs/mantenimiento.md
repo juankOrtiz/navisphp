@@ -1,5 +1,9 @@
 # Mantenimiento
 
+<< Anterior: [Vistas](vistas.md)
+
+\>> Siguiente: [Logging](logging.md)
+
 -   [Introduccion](#introduccion)
 -   [Archivo config](#archivo-config)
 -   [Modo mantenimiento](#modo-mantenimiento)
@@ -59,3 +63,9 @@ if ($maintenance->get('status') === 1) {
     }
 }
 ```
+
+[Volver al inicio](#mantenimiento)
+
+<< Anterior: [Vistas](vistas.md)
+
+\>> Siguiente: [Logging](logging.md)

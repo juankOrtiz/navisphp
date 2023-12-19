@@ -1,5 +1,9 @@
 # Configuracion
 
+<< Anterior: [El ciclo de vida de la aplicación](ciclo_vida.md)
+
+\>> Siguiente: [Routing y middlewares](routing_middlewares.md)
+
 -   [Introduccion](#introduccion)
 -   [Archivo config](#archivo-config)
 -   [Clase Settings](#clase-settings)
@@ -23,8 +27,7 @@ El archivo `config.php` contiene todas las credenciales y variables de configura
 > [!INFO]
 > Se recomienda que cada vez que surja la necesidad de agregar un grupo de credenciales, se modifique el archivo `config.example.php` para tener una versión sincronizada del esquema de configuración.
 
-> [!WARNING]
-> `config.php` nunca debería ser agregado al control de versiones de Git, ya que posee información sensible como claves y contraseñas. Si bien se encuentra por defecto en el gitignore, el programador nunca debería cambiar este comportamiento.
+> [!WARNING] > `config.php` nunca debería ser agregado al control de versiones de Git, ya que posee información sensible como claves y contraseñas. Si bien se encuentra por defecto en el gitignore, el programador nunca debería cambiar este comportamiento.
 
 El archivo `config.php` simplemente devuelve un arreglo con los grupos de credenciales necesarios. Veamos una parte resumida del código:
 
@@ -65,3 +68,9 @@ use Core\Settings;
 $database = new Settings('database');
 $username = $database->get('username')
 ```
+
+[Volver al inicio](#configuracion)
+
+<< Anterior: [El ciclo de vida de la aplicación](ciclo_vida.md)
+
+\>> Siguiente: [Routing y middlewares](routing_middlewares.md)

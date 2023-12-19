@@ -1,5 +1,9 @@
 # Jobs
 
+<< Anterior: [Logging](logging.md)
+
+\>> Siguiente: [Ejemplo de creación de un recurso](ejemplo_recurso.md)
+
 -   [Introduccion](#introduccion)
 -   [Estructura de un job](#estructura-de-un-job)
 
@@ -43,3 +47,9 @@ $log->save(message: 'Log del job test.php', context: ['fecha' => 'Log creado a l
 Nota que se define un nuevo canal con el nombre _jobs_ al crear el log. Los jobs son un caso típico de procesos que deberían loggearse para comprender si la tarea programada se ha llevado a cabo o no.
 
 Para más información sobre el funcionamiento de Logger puedes visitar la documentación de [Logging](logging.md)
+
+[Volver al inicio](#jobs)
+
+<< Anterior: [Logging](logging.md)
+
+\>> Siguiente: [Ejemplo de creación de un recurso](ejemplo_recurso.md)

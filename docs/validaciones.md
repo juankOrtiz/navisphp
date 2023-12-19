@@ -1,5 +1,9 @@
 # Validaciones
 
+<< Anterior: [Bases de datos](database.md)
+
+\>> Siguiente: [Sesiones y autenticación](sesiones_autenticacion.md)
+
 -   [Introduccion](#introduccion)
 -   [Forms](#forms)
 -   [Clase Validator](#clase-validator)
@@ -74,3 +78,9 @@ public static function email($value)
 ```
 
 Si nos encontramos con un nuevo tipo de validación que no existe, podemos agregarlo a este archivo como una nueva función estática y luego llamarlo desde el constructor de nuestras clases Form.
+
+[Volver al inicio](#validaciones)
+
+<< Anterior: [Bases de datos](database.md)
+
+\>> Siguiente: [Sesiones y autenticación](sesiones_autenticacion.md)

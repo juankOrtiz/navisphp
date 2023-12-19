@@ -1,5 +1,7 @@
 # Ejemplo de creación de un recurso
 
+<< Anterior: [Jobs](jobs.md)
+
 -   [Introduccion](#introduccion)
 -   [Descripción del recurso](#descripción-del-recurso)
 -   [Base de datos](#base-de-datos)
@@ -401,3 +403,7 @@ $db->query(
 header('location: /tasks');
 exit();
 ```
+
+[Volver al inicio](#ejemplo-de-creación-de-un-recurso)
+
+<< Anterior: [Jobs](jobs.md)

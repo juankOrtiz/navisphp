@@ -1,5 +1,9 @@
 # Routing y middlewares
 
+<< Anterior: [Configuración](configuracion.md)
+
+\>> Siguiente: [Controladores](controladores.md)
+
 -   [Introduccion](#introduccion)
 -   [Lectura de URI](#lectura-de-uri)
 -   [Archivo routes](#archivo-routes)
@@ -169,3 +173,9 @@ Para crear un nuevo middleware en nuestra aplicación debemos seguir los siguien
 2. Agregar un método llamado _handle()_ y agregar la comprobación que debe pasar la aplicación y que acciones tomar en caso de que no se cumpla.
 
 3. Modificar la clase `Core\Middleware\Middleware.php` y agregar el nombre de la nueva clase a la constante MAP.
+
+[Volver al inicio](#routing-y-middlewares)
+
+<< Anterior: [Configuración](configuracion.md)
+
+\>> Siguiente: [Controladores](controladores.md)

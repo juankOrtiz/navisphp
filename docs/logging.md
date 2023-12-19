@@ -1,5 +1,9 @@
 # Logging
 
+<< Anterior: [Mantenimiento](mantenimiento.md)
+
+\>> Siguiente: [Jobs](jobs.md)
+
 -   [Introduccion](#introduccion)
 -   [Clase Logger](#clase-logger)
 -   [Tipos de niveles](#tipos-de-niveles)
@@ -56,3 +60,9 @@ $log->save(
 ## Referencia de Monolog
 
 En el siguiente enlace puedes acceder a la [documentación de Monolog](https://github.com/Seldaek/monolog/blob/main/doc/01-usage.md) para profundizar en las características de dicha librería.
+
+[Volver al inicio](#logging)
+
+<< Anterior: [Mantenimiento](mantenimiento.md)
+
+\>> Siguiente: [Jobs](jobs.md)

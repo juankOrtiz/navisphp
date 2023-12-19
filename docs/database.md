@@ -1,5 +1,9 @@
 # Bases de datos
 
+<< Anterior: [Controladores](controladores.md)
+
+\>> Siguiente: [Validaciones](validaciones.md)
+
 -   [Introduccion](#introduccion)
 -   [Credenciales](#credenciales)
 -   [Clase Database](#clase-database)
@@ -173,3 +177,9 @@ $db->query(
 Si bien no es una parte fundamental de la clase de consultas, la carpeta `database` viene por defecto con un archivo `script.sql` que contiene la estructura base de una base de datos usada por el framework: la creación de la base de datos y de una sencilla tabla de usuarios que puede utilizarse como punto de partida.
 
 A partir de allí, puedes optar por ampliar este script con las demás tablas de tu base de datos o guardar otros tipos de scripts que sean útiles.
+
+[Volver al inicio](#bases-de-datos)
+
+<<< Anterior: [Controladores](controladores.md)
+
+\>> Siguiente: [Validaciones](validaciones.md)

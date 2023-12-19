@@ -1,5 +1,9 @@
 # Sesiones y Autenticación
 
+<< Anterior: [Validaciones](validaciones.md)
+
+\>> Siguiente: [Vistas](vistas.md)
+
 -   [Introduccion](#introduccion)
 -   [Rutas de autenticación](#rutas-de-autenticación)
 -   [Clase Session](#clase-session)
@@ -173,3 +177,9 @@ function isSuperAdmin(): bool
 ```
 
 Todas estas funciones pueden ser usadas en los controladores o las vistas.
+
+[Volver al inicio](#sesiones-y-autenticación)
+
+<< Anterior: [Validaciones](validaciones.md)
+
+\>> Siguiente: [Vistas](vistas.md)

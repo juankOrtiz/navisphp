@@ -1,5 +1,9 @@
 # Vistas
 
+<< Anterior: [Sesiones y autenticación](sesiones_autenticacion.md)
+
+\>> Siguiente: [Mantenimiento](mantenimiento.md)
+
 -   [Introduccion](#introduccion)
 -   [Características de las vistas](#características-de-las-vistas)
 -   [Vistas parciales](#vistas-parciales)
@@ -180,3 +184,9 @@ Por ejemplo, para cargar el archivo public/css/app.css en una vista podríamos u
 ```html
 <link rel="stylesheet" href="<?= css('/app.css') ?>" />
 ```
+
+[Volver al inicio](#vistas)
+
+<< Anterior: [Sesiones y autenticación](sesiones_autenticacion.md)
+
+\>> Siguiente: [Mantenimiento](mantenimiento.md)
