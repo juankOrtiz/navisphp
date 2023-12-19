@@ -212,7 +212,7 @@ class Container
 
 ## Preguntas frecuentes
 
-## ¿Que clases podemos agregar al contenedor?
+### ¿Que clases podemos agregar al contenedor?
 
 Si bien es posible agregar múltiples clases al contenedor de la aplicación, saturar el contenedor no suele ser una buena idea. Los siguientes puntos pueden ayudarnos a decidir en qué casos conviene cargar una clase al contenedor:
 
