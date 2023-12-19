@@ -97,7 +97,6 @@ authorize($note['user_id'] === $userId);
 
 ```php
 view("users/create.view.php", [
-  'heading' => 'Create user',
   'errors' => []
 ]);
 ```
