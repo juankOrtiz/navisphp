@@ -1,5 +1,3 @@
 <?php
 
-view("index.view.php", [
-  'heading' => 'Index',
-]);
+view("index.view.php");
