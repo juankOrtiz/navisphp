@@ -89,7 +89,7 @@ $method = $_POST['_method'] ?? $_SERVER['REQUEST_METHOD'];
 // Si el sitio está en mantenimiento, se dejará pasar solo a los super admins
 // o a los usuarios que visiten las rutas permitidas
 if (config('maintenance.status') === 1) {
-    $rutas_permitidas = $maintenance->get('allowed_routes');
+    $rutas_permitidas = config('maintenance.allowed_routes');
     if (!in_array($uri, $rutas_permitidas, true)) {
         if (user() && !isSuperAdmin()) {
             http_response_code(Response::MAINTENANCE);
