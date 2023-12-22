@@ -99,3 +99,19 @@ function img(string $path): string
 {
     return resourceRoute($path) . 'img' . $path;
 }
+
+function config(string $key): mixed
+{
+    $file = require base_path('config.php');
+
+    $segments = explode('.', $key);
+
+    foreach ($segments as $segment) {
+        if (!isset($file[$segment])) {
+            return null;
+        }
+        $file = $file[$segment];
+    }
+
+    return $file;
+}
