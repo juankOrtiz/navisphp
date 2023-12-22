@@ -86,10 +86,9 @@ $method = $_POST['_method'] ?? $_SERVER['REQUEST_METHOD'];
 6. El siguiente paso es confirmar si el sitio se encuentra en [mantenimiento](mantenimiento.md), en cuyo caso se analizarán las limitaciones pertinentes.
 
 ```php
-$maintenance = new Settings('maintenance');
 // Si el sitio está en mantenimiento, se dejará pasar solo a los super admins
 // o a los usuarios que visiten las rutas permitidas
-if ($maintenance->get('status') === 1) {
+if (config('maintenance.status') === 1) {
     $rutas_permitidas = $maintenance->get('allowed_routes');
     if (!in_array($uri, $rutas_permitidas, true)) {
         if (user() && !isSuperAdmin()) {

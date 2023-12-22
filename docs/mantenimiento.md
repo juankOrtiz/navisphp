@@ -50,10 +50,8 @@ Para finalizar el modo mantenimiento basta con cambiar el valor de la clave `sta
 El único lugar de la aplicación donde se aplica el mecanismo de mantenimiento es en `public\index.php` antes de finalizar cada request de la aplicación.
 
 ```php
-$maintenance = new Settings('maintenance');
-
-if ($maintenance->get('status') === 1) {
-    $rutas_permitidas = $maintenance->get('allowed_routes');
+if (config('maintenance.status') === 1) {
+    $rutas_permitidas = config('maintenance.allowed_routes');
     if (!in_array($uri, $rutas_permitidas, true)) {
         if (user() && !isSuperAdmin()) {
             http_response_code(Response::MAINTENANCE);

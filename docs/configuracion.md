@@ -6,7 +6,7 @@
 
 -   [Introduccion](#introduccion)
 -   [Archivo config](#archivo-config)
--   [Clase Settings](#clase-settings)
+-   [Método config](#método-config)
 
 ## Introduccion
 
@@ -18,7 +18,7 @@ NavisPHP toma prestada la ideología de otros frameworks de que el comportamient
 -   El enlace con API's o servicios externos
 -   Características del modo mantenimiento
 
-Esto se realiza mediante dos componentes provistos por el framework: el archivo `config.php` y la clase `Core\Settings.php`.
+Esto se realiza mediante dos componentes provistos por el framework: el archivo `config.php` y el método `config`.
 
 ## Archivo config
 
@@ -47,26 +47,22 @@ Estos valores vacíos deben ser completados con las credenciales de nuestra cone
 
 Pero para que la aplicación pueda acceder a estos datos es necesaria la ayuda de otra clase.
 
-## Clase Settings
+## Método config
 
-La clase `Core\Settings` es la encargada de leer todos los valores definidos en el archivo de configuración, proveyendo acceso a las variables de dicho archivo al resto de la aplicación.
-
-Al instanciar la clase debemos indicar cual es el grupo de credenciales al cual deseamos acceder. Por ejemplo: si creamos un objeto con el argumento _"database"_, el constructor leerá el archivo `config.php` y devolverá el arreglo de todas las credenciales bajo ese nombre.
-
-El método _get($key)_ es el encargado de obtener la credencial específica del grupo al cual estamos accediendo.
+El método `functions\config` es el encargado de leer los valores definidos en el archivo de configuración, brindando acceso a las variables de dicho archivo al resto de la aplicación. Recibe como argumento una cadena que puede poseer la clave de un grupo de variables al cual deseamos acceder, en cuyo caso nos devolverá el arreglo completo de dicho grupo.
 
 ```php
-// Constructor de Settings.php
-public function __construct($config) {
-    $archivo = require base_path('config.php');
-    $this->config = $archivo[$config];
-}
+$app = config('app'); // Devuelve el arreglo app
 
-// En otro archivo agregamos lo siguiente:
-use Core\Settings;
+// Para obtener un valor dentro de este arreglo podemos usar los corchetes
+$url = $app['url'];
+$timezone = $app['timezone'];
+```
 
-$database = new Settings('database');
-$username = $database->get('username')
+Si deseamos obtener un valor único también podemos usar la _"dot notation"_, usando un punto para definir el arreglo general y luego la clave específica que deseamos guardar.
+
+```php
+$url = config('app.timezone'); // Devuelve el valor de timezone.
 ```
 
 [Volver al inicio](#configuracion)

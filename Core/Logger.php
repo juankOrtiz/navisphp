@@ -16,8 +16,7 @@ class Logger
 
     public function __construct(string $channel = 'app')
     {
-        $timezone = new Settings('app');
-        date_default_timezone_set($timezone->get('timezone'));
+        date_default_timezone_set(config('app.timezone'));
 
         $this->log = new MonoLogger($channel);
         $this->log->pushHandler(new StreamHandler(
